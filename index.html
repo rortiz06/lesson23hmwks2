@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            background: linear-gradient(to right, blue 0%, red 100%);
+        }
+
+        table {
+            border: solid lightblue 3px;
+            color: white;
+        }
+
+        img {
+            width: 250px;
+            height: auto;
+            border-radius: 30%;
+        }
+
+        a:link,
+        a:visited {
+            font-weight: blod;
+            text-decoration: none;
+            color: white; }
+    </style>
+
+</head>
+
+<body>
+    <table>
+        <form name="theform">
+            <tr>
+                <td>
+                    <h2>Temperature Converter</h2>
+                </td>
+            </tr>
+            <tr>
+                <td> Calculate Farenheit to Celcius: (68&#176F-32) x 5/9 = 20&#176C</td>
+            </tr>
+            <tr>
+                <td>Calculate Celcius to Farenheit:(20&#176C * 1.8)+32 = 68&#176F</td>
+            </tr>
+            <tr>
+                <td rowspan="8"><img src="pic.jpg" alt="">
+                <td>Enter Temperature value in Farenheit:</td>
+                <td id="Farenheit"><input name="Farenheit" size="10"></td>
+
+
+            </tr>
+            <tr>
+                <td><span style="float: right"> Celcius: </span></td>
+                <td style="background-color: white; color: black" id="CelOutput"></td>
+            <tr>
+                <td><input type="button" name="calc" value="Calculate" onclick="calculate1();">
+                    <input type="button" name="clear" value="Clear" onclick="clearinfo1();">
+                </td>
+            </tr>
+
+
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+
+                <td>Enter Temperature value in Celcius</td>
+                <td id="Celcius"><input name="Celcius" size="10"></td>
+
+
+            </tr>
+            <tr>
+                <td><span style="float: right"> Farenheit: </span></td>
+                <td style="background-color: white; color: black" id="FarOutput"></td>
+            <tr>
+                <td><input type="button" name="cal" value="Calculate" onclick="calculate2();">
+                    <input type="button" name="clear" value="Clear" onclick="clearinfo2();">
+                </td>
+            </tr>
+
+
+        </form>
+
+    </table>
+    <script>
+
+        function calculate1() {
+
+
+            var farNumberInput
+
+
+
+
+
+            farNumberInput = parseInt(document.theform.Farenheit.value)
+
+
+
+
+            document.getElementById("CelOutput").innerHTML = ((farNumberInput - 32) * (5 / 9)).toFixed(1)+ "&#176" + "C"
+
+
+
+
+        }
+
+
+        function calculate2() {
+
+
+
+            var celNumberInput
+
+
+
+
+
+
+            celNumberInput = parseInt(document.theform.Celcius.value)
+
+
+
+
+            document.getElementById("FarOutput").innerHTML = (celNumberInput * 1.8 + 32).toFixed(1) + "&#176" + "F"
+
+
+
+
+        }
+
+
+        function clearinfo1() {
+
+
+            document.theform.Farenheit.value = " ";
+
+            document.getElementById("CelOutput").innerHTML = " ";
+
+
+
+
+            document.theform.Farenheit.focus();
+
+
+        }
+
+        function clearinfo2() {
+
+
+
+            document.theform.Celcius.value = " ";
+
+            document.getElementById("FarOutput").innerHTML = " ";
+
+
+
+
+            document.theform.Celcius.focus();
+        }
+
+
+
+    </script>
+
+
+
+
+
+</body> <br>
+<a href="http://csnet.southtexascollege.edu/localuser/rortiz84/">Go Back to HomePage</a><br>
+<p style="color:white;"> Roy Ortiz</p><br>
+
+</html>
